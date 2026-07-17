@@ -16,7 +16,7 @@ export const CONFIG = {
     {
       id: 'studio',
       priceFrom: 2100000,
-      m2: null, // [DATO PENDIENTE]
+      m2: 32, // ficha IG "1 Recámara": 31-34 m² — confirmar con ICONO que Estudios = esta unidad
       units: null, // [DATO PENDIENTE]
       name: { es: 'Estudios', en: 'Studios' },
       rental: {
@@ -27,8 +27,8 @@ export const CONFIG = {
     },
     {
       id: '2br',
-      priceFrom: 4200000,
-      m2: null, // [DATO PENDIENTE]
+      priceFrom: 4200000, // flyer F&F; ficha IG abr-2026 decía desde $3,525,400 — validar vigencia
+      m2: 59, // ficha IG: 58-60 m², 2 baños completos
       units: null, // [DATO PENDIENTE]
       name: { es: '2 Recámaras', en: '2 Bedrooms' },
       rental: {
@@ -39,8 +39,8 @@ export const CONFIG = {
     },
     {
       id: '3br',
-      priceFrom: 5000000,
-      m2: null, // [DATO PENDIENTE]
+      priceFrom: 5000000, // flyer F&F; ficha IG abr-2026 decía desde $4,515,600 — validar vigencia
+      m2: 76, // ficha IG: 76 m², 2 baños completos
       units: null, // [DATO PENDIENTE]
       name: { es: '3 Recámaras', en: '3 Bedrooms' },
       rental: {
