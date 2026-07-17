@@ -21,7 +21,7 @@
 
 ## Dirección visual — "Industrial Boutique"
 
-- **Paleta**: tinta-navy profundo (evolución del logo actual), gris concreto, arena/latte cálido (de los renders), acento **cobre/latón** para CTAs y capa de datos. Definida como tokens CSS (`--color-*`).
+- **Paleta**: tinta-navy profundo (evolución del logo actual), gris concreto, arena/latte cálido (de los renders), acento **dorado** para CTAs y capa de datos (alineado al flyer oficial de preventa, que ya usa navy + dorado). Definida como tokens CSS (`--color-*`).
 - **Tipografía**: grotesk display de carácter para titulares (tracking apretado, tamaños grandes con `clamp()`), sans limpia para cuerpo, numerales tabulares grandes para datos (precios, rendimientos, m²). Máximo 2 familias.
 - **Motivo gráfico**: líneas de plano arquitectónico (blueprint) como textura sutil en fondos y transiciones.
 - **Motion**: reveals al scroll (IntersectionObserver), contadores animados en cifras, solo propiedades compositor-friendly (`transform`/`opacity`), respeta `prefers-reduced-motion`.
@@ -81,8 +81,17 @@ Formulario (en calculadora y cierre) captura: nombre, contacto (tel/email), perf
 - CRM más allá de Airtable (pipelines, automatizaciones de seguimiento).
 - Panel de administración para editar precios (se edita el archivo de config; puede evolucionar a Airtable-as-CMS después).
 
+## Datos reales confirmados (flyer oficial de preventa, 2026-07-16)
+
+- **Precios preventa**: Estudios desde $2.1 MDP · 2 Recámaras desde $4.2 MDP · 3 Recámaras desde $5.0 MDP.
+- **Etapa**: preventa exclusiva "Friends & Family" con **6% de descuento por tiempo limitado**.
+- **Entrega estimada**: enero 2027. 28 unidades (estudios, 2 rec, 3 rec).
+- **Ubicación** (para sección mapa): 1 cuadra de Av. Nader · 3 min de Puerto Cancún y Plaza Las Américas · <5 min de playas, Mercado 28 y Zona Hotelera · 17 min del aeropuerto internacional.
+- **Amenidades**: rooftop con área de asador y jacuzzi.
+- **WhatsApp destino de leads**: +52 998 341 0834.
+- Nota: el hero del sitio actual dice "desde $1,900,00.00 MXN" — discrepancia con el flyer ($2.1 MDP); confirmar cuál rige.
+
 ## Pendientes del cliente
 
-1. **Números reales**: precios por tipología (+ unidades disponibles), renta esperada (Airbnb ADR + ocupación y/o larga estancia), % plusvalía proyectada y fuente, planes de pago, fecha de entrega y avance de obra, gastos (mantenimiento, % administración, predial).
-2. Confirmar el número de WhatsApp destino de leads.
-3. (Opcional) Material visual en calidad original si el de Instagram no basta.
+1. **Números de renta y proyección**: Airbnb ADR + ocupación y/o renta mensual larga estancia, % plusvalía proyectada y fuente, detalle de planes de pago (enganche/mensualidades/contra entrega), gastos (mantenimiento, % administración de rentas, predial), m² y unidades disponibles por tipología. Mientras: placeholders `[DATO PENDIENTE]` o supuestos de mercado citados.
+2. (Opcional) Material visual en calidad original si el de Instagram no basta.
