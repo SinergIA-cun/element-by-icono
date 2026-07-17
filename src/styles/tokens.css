@@ -1,0 +1,18 @@
+:root {
+  /* Industrial Boutique — navy/concreto/arena/dorado (flyer oficial) */
+  --ink: oklch(21% 0.045 260);        /* navy-tinta profundo */
+  --ink-soft: oklch(28% 0.04 260);
+  --concrete: oklch(88% 0.005 90);
+  --sand: oklch(94% 0.02 85);
+  --latte: oklch(80% 0.04 80);
+  --gold: oklch(72% 0.11 85);         /* acento dorado CTAs/datos */
+  --gold-deep: oklch(60% 0.12 80);
+  --paper: oklch(97% 0.008 85);
+
+  --text-hero: clamp(3rem, 1rem + 7vw, 7.5rem);
+  --text-display: clamp(2rem, 1rem + 3.5vw, 4rem);
+  --text-base: clamp(1rem, .95rem + .3vw, 1.125rem);
+  --space-section: clamp(4.5rem, 3rem + 6vw, 11rem);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 600ms;
+}
