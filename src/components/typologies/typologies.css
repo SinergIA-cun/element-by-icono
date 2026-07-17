@@ -1,0 +1,244 @@
+#typologies {
+  background: var(--paper);
+}
+
+.typologies {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--space-section) clamp(1.25rem, 5vw, 5rem);
+}
+
+.typologies__head {
+  max-width: 46ch;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.typologies__eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.typologies__heading {
+  margin-bottom: 1rem;
+  font-size: var(--text-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.typologies__sub {
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.typologies__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  align-items: start;
+}
+
+.typologies__footnote {
+  margin-top: 1.75rem;
+  font-size: 0.8rem;
+  color: color-mix(in oklab, var(--ink-soft) 75%, transparent);
+}
+
+/* Card */
+.typo-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: color-mix(in oklab, var(--sand) 45%, var(--paper));
+  border: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+  border-radius: 8px;
+  transition: transform 260ms var(--ease-out-expo),
+    box-shadow 260ms var(--ease-out-expo),
+    border-color 260ms var(--ease-out-expo);
+}
+
+.typo-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--gold) 45%, transparent);
+  box-shadow: 0 24px 48px -30px oklch(21% 0.045 260 / 0.55);
+}
+
+.typo-card--featured {
+  border: 1.5px solid var(--gold);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--gold) 8%, var(--paper)),
+    color-mix(in oklab, var(--sand) 40%, var(--paper))
+  );
+  box-shadow: 0 20px 44px -28px oklch(60% 0.12 80 / 0.5);
+}
+
+.typo-card__tag {
+  position: absolute;
+  top: 0;
+  left: clamp(1.5rem, 3vw, 2.25rem);
+  transform: translateY(-50%);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 999px;
+}
+
+.typo-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+.typo-card__name {
+  font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.typo-card__area {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gold-deep);
+}
+
+.typo-card__price {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.typo-card__price-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.typo-card__price-value {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-size: clamp(2rem, 1.4rem + 2.5vw, 2.9rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.typo-card__rent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.1rem;
+  background: color-mix(in oklab, var(--ink) 5%, transparent);
+  border-radius: 6px;
+}
+
+.typo-card__rent-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.typo-card__rent-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.typo-card__rent-value {
+  font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.typo-card__rent-per {
+  margin-left: 0.15rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.typo-card__yield {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 999px;
+}
+
+.typo-card__yield-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.typo-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--gold-deep);
+  transition: gap 220ms var(--ease-out-expo), color 220ms var(--ease-out-expo);
+}
+
+.typo-card__cta span {
+  transition: transform 220ms var(--ease-out-expo);
+}
+
+.typo-card__cta:hover {
+  color: var(--ink);
+}
+
+.typo-card__cta:hover span {
+  transform: translateX(4px);
+}
+
+.typo-card__cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+@media (min-width: 760px) {
+  .typologies__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  /* Featured card lifts slightly for hierarchy on wide viewports. */
+  .typo-card--featured {
+    transform: translateY(-1.25rem);
+  }
+
+  .typo-card--featured:hover {
+    transform: translateY(calc(-1.25rem - 4px));
+  }
+}

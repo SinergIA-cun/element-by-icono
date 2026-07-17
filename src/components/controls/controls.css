@@ -1,0 +1,53 @@
+.controls {
+  position: fixed;
+  top: clamp(0.75rem, 2vw, 1.5rem);
+  right: clamp(0.75rem, 2vw, 1.5rem);
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem;
+  background: color-mix(in oklab, var(--ink) 82%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid color-mix(in oklab, var(--latte) 30%, transparent);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px -12px oklch(0% 0 0 / 0.5);
+}
+
+.controls__set {
+  display: inline-flex;
+  gap: 0.1rem;
+}
+
+.controls__divider {
+  width: 1px;
+  align-self: stretch;
+  margin: 0.15rem 0.25rem;
+  background: color-mix(in oklab, var(--latte) 25%, transparent);
+}
+
+.controls__btn {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: color-mix(in oklab, var(--sand) 70%, transparent);
+  border-radius: 999px;
+  transition: color 160ms var(--ease-out-expo),
+    background-color 160ms var(--ease-out-expo);
+}
+
+.controls__btn:hover {
+  color: var(--sand);
+}
+
+.controls__btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.controls__btn.is-active {
+  color: var(--ink);
+  background: var(--gold);
+}
