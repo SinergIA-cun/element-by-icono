@@ -1,0 +1,128 @@
+#timeline {
+  background: var(--sand);
+}
+
+.timeline {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-section) clamp(1.25rem, 4vw, 3rem);
+}
+
+.timeline__eyebrow {
+  color: var(--gold-deep);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.timeline__heading {
+  font-family: 'Archivo Expanded', 'Inter', sans-serif;
+  font-stretch: expanded;
+  font-size: var(--text-display);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.timeline__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 2rem 0 0;
+  margin: 0;
+}
+
+.timeline__bar {
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: oklch(21% 0.045 260 / 0.15);
+}
+
+.timeline__bar-fill {
+  width: var(--progress, 30%);
+  height: 100%;
+  background: var(--gold-deep);
+}
+
+.timeline__item {
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.timeline__dot {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--sand);
+  border: 2px solid oklch(21% 0.045 260 / 0.35);
+  transform: translateY(0.35rem);
+}
+
+.timeline__item--now .timeline__dot {
+  background: var(--gold);
+  border-color: var(--gold-deep);
+  box-shadow: 0 0 0 5px oklch(72% 0.11 85 / 0.25);
+}
+
+.timeline__item--goal .timeline__dot {
+  border-color: var(--ink);
+  border-width: 3px;
+}
+
+.timeline__title {
+  display: block;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.timeline__item--now .timeline__title {
+  color: var(--gold-deep);
+}
+
+.timeline__meta {
+  font-size: 0.85rem;
+  color: oklch(40% 0.02 260);
+}
+
+.timeline__note {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  font-size: 0.8rem;
+  color: oklch(48% 0.02 260);
+}
+
+@media (max-width: 720px) {
+  .timeline__track {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 0 0 0 1.6rem;
+  }
+  .timeline__bar {
+    top: 0;
+    bottom: 0;
+    left: 0.35rem;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+  .timeline__bar-fill {
+    width: 100%;
+    height: var(--progress, 30%);
+  }
+  .timeline__dot {
+    top: 0.1rem;
+    left: -1.6rem;
+    transform: none;
+  }
+}

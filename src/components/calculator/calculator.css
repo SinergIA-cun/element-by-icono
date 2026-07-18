@@ -1,0 +1,346 @@
+/* Investment calculator — the "engine room" of the page: dark ink panel,
+   blueprint texture, gold accents on data. Two columns on desktop
+   (inputs ~40% / results ~60%), stacked on mobile. */
+#calculator {
+  background: var(--ink);
+}
+
+.calc {
+  color: var(--sand);
+}
+
+.calc__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: var(--space-section) clamp(1.25rem, 5vw, 5rem);
+}
+
+.calc__head {
+  max-width: 46ch;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.calc__eyebrow {
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.calc__heading {
+  font-size: var(--text-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+  text-wrap: balance;
+}
+
+.calc__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+/* Inputs */
+.calc__form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.calc__field {
+  display: grid;
+  gap: 0.65rem;
+  border: 0;
+}
+
+.calc__label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sand) 82%, transparent);
+}
+
+.calc__seg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 0.5rem;
+}
+
+.calc__seg-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 0.85rem 0.9rem;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--paper) 6%, transparent);
+  border: 1px solid color-mix(in oklab, var(--latte) 25%, transparent);
+  border-radius: 6px;
+  transition: border-color 180ms var(--ease-out-expo), background-color 180ms var(--ease-out-expo),
+    transform 180ms var(--ease-out-expo);
+}
+
+.calc__seg-option:hover {
+  border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+}
+
+.calc__seg-option.is-active {
+  border-color: var(--gold);
+  background: color-mix(in oklab, var(--gold) 16%, transparent);
+}
+
+.calc__seg-option:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.calc__seg-option input,
+.calc__pill input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.calc__seg-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--paper);
+}
+
+.calc__seg-price {
+  font-size: 0.76rem;
+  color: color-mix(in oklab, var(--sand) 70%, transparent);
+}
+
+.calc__seg--compact .calc__seg-option {
+  align-items: center;
+  text-align: center;
+}
+
+.calc__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.calc__pill {
+  position: relative;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  background: color-mix(in oklab, var(--paper) 6%, transparent);
+  border: 1px solid color-mix(in oklab, var(--latte) 25%, transparent);
+  border-radius: 999px;
+  transition: border-color 180ms var(--ease-out-expo), background-color 180ms var(--ease-out-expo),
+    color 180ms var(--ease-out-expo);
+}
+
+.calc__pill:hover {
+  border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+}
+
+.calc__pill.is-active {
+  color: var(--ink);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.calc__pill:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Results */
+.calc__panel {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.calc__results {
+  display: grid;
+  gap: 1.1rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: color-mix(in oklab, var(--paper) 6%, transparent);
+  border: 1px solid color-mix(in oklab, var(--latte) 20%, transparent);
+  border-radius: 8px;
+}
+
+.calc__results--tick {
+  animation: calcTick 320ms var(--ease-out-expo);
+}
+
+@keyframes calcTick {
+  from {
+    opacity: 0.5;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .calc__results--tick {
+    animation: none;
+  }
+}
+
+.calc__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.calc__row-label {
+  font-size: 0.82rem;
+  color: color-mix(in oklab, var(--sand) 78%, transparent);
+}
+
+.calc__row-value {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--paper);
+}
+
+.calc__hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.15rem 0;
+  border-top: 1px solid color-mix(in oklab, var(--latte) 18%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--latte) 18%, transparent);
+}
+
+.calc__hero-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.calc__hero-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sand) 78%, transparent);
+}
+
+.calc__hero-value {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: var(--gold);
+}
+
+.calc__yield-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 999px;
+}
+
+.calc__yield-badge em {
+  font-style: normal;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.calc__roi {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.calc__roi-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.calc__roi-label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, var(--sand) 78%, transparent);
+}
+
+.calc__roi-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--paper);
+}
+
+.calc__breakdown {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--sand) 62%, transparent);
+}
+
+.calc__disclaimer {
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: color-mix(in oklab, var(--latte) 78%, transparent);
+}
+
+/* Gate */
+.calc__gate-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1.05rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 6px;
+  box-shadow: 0 14px 32px -16px oklch(72% 0.11 85 / 0.75);
+  transition: transform 200ms var(--ease-out-expo), background-color 200ms var(--ease-out-expo),
+    box-shadow 200ms var(--ease-out-expo);
+}
+
+.calc__gate-cta:hover {
+  background: var(--gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -16px oklch(60% 0.12 80 / 0.85);
+}
+
+.calc__gate-cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (min-width: 900px) {
+  .calc__grid {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+}

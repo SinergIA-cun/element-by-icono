@@ -1,0 +1,190 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--ink);
+  isolation: isolate;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Art direction: keep the warm rooftop toward the right; on narrow screens
+     bias to the right so faces/furniture stay in frame and text sits on ink. */
+  object-position: 72% 50%;
+}
+
+/* La foto fuente trae texto horneado en el tercio superior (post de IG);
+   en pantallas angostas se asoma — recortamos hacia la parte baja. */
+@media (max-width: 700px) {
+  .hero__bg {
+    object-position: 60% 88%;
+  }
+}
+
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      100deg,
+      oklch(21% 0.045 260 / 0.96) 0%,
+      oklch(21% 0.045 260 / 0.82) 34%,
+      oklch(21% 0.045 260 / 0.35) 62%,
+      oklch(21% 0.045 260 / 0.08) 100%
+    ),
+    linear-gradient(to top, oklch(21% 0.045 260 / 0.6), transparent 40%);
+}
+
+.hero__inner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 5rem) clamp(6rem, 12vh, 9rem);
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  padding: 0.5rem 0.9rem 0.5rem 0.75rem;
+  font-size: clamp(0.7rem, 0.65rem + 0.2vw, 0.82rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--sand);
+  background: color-mix(in oklab, var(--ink) 40%, transparent);
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero__eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 70%, transparent);
+  animation: heroPulse 2.6s var(--ease-out-expo) infinite;
+}
+
+@keyframes heroPulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 60%, transparent); }
+  70% { box-shadow: 0 0 0 8px oklch(72% 0.11 85 / 0); }
+  100% { box-shadow: 0 0 0 0 oklch(72% 0.11 85 / 0); }
+}
+
+.hero__title {
+  max-width: 16ch;
+  margin-bottom: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--paper);
+  text-wrap: balance;
+}
+
+.hero__sub {
+  max-width: 46ch;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.4rem);
+  line-height: 1.45;
+  color: color-mix(in oklab, var(--sand) 88%, var(--paper));
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: transform 220ms var(--ease-out-expo),
+    background-color 220ms var(--ease-out-expo),
+    box-shadow 220ms var(--ease-out-expo),
+    border-color 220ms var(--ease-out-expo);
+}
+
+.hero__cta--primary {
+  color: var(--ink);
+  background: var(--gold);
+  box-shadow: 0 10px 30px -14px oklch(72% 0.11 85 / 0.8);
+}
+
+.hero__cta--primary:hover {
+  background: var(--gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -14px oklch(60% 0.12 80 / 0.9);
+}
+
+.hero__cta--ghost {
+  color: var(--paper);
+  background: color-mix(in oklab, var(--ink) 30%, transparent);
+  border: 1px solid color-mix(in oklab, var(--sand) 45%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.hero__cta--ghost:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.hero__wa-icon {
+  flex-shrink: 0;
+}
+
+.hero__cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vh, 2.5rem);
+  right: clamp(1.25rem, 5vw, 5rem);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: color-mix(in oklab, var(--sand) 75%, transparent);
+}
+
+.hero__scroll-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+@media (min-width: 768px) {
+  .hero__scroll {
+    display: flex;
+  }
+}

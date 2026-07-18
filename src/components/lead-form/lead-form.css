@@ -1,0 +1,184 @@
+/* Reusable lead-capture form. Rendered as a light "card" surface so it reads
+   as a deliberate, elevated moment regardless of what section embeds it
+   (dark calculator gate today; potentially a light footer later). */
+.lead-form {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--paper);
+  border: 1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+  border-radius: 8px;
+  box-shadow: 0 24px 56px -30px oklch(0% 0 0 / 0.6);
+}
+
+.lead-form__field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.lead-form__field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.lead-form__field input,
+.lead-form__field select {
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: color-mix(in oklab, var(--sand) 55%, var(--paper));
+  border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+  border-radius: 5px;
+  transition: border-color 180ms var(--ease-out-expo), box-shadow 180ms var(--ease-out-expo);
+}
+
+.lead-form__field input:hover,
+.lead-form__field select:hover {
+  border-color: color-mix(in oklab, var(--ink) 32%, transparent);
+}
+
+.lead-form__field input:focus-visible,
+.lead-form__field select:focus-visible {
+  outline: none;
+  border-color: var(--gold-deep);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--gold) 30%, transparent);
+}
+
+.lead-form__field input[aria-invalid='true'] {
+  border-color: color-mix(in oklab, oklch(55% 0.18 25) 70%, var(--ink) 10%);
+}
+
+.lead-form__error {
+  min-height: 1.1em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: oklch(52% 0.19 25);
+}
+
+.lead-form__submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+  padding: 0.9rem 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 5px;
+  transition: background-color 200ms var(--ease-out-expo), transform 200ms var(--ease-out-expo),
+    box-shadow 200ms var(--ease-out-expo);
+  box-shadow: 0 12px 28px -16px oklch(72% 0.11 85 / 0.7);
+}
+
+.lead-form__submit:hover:not(:disabled) {
+  background: var(--gold-deep);
+  transform: translateY(-2px);
+}
+
+.lead-form__submit:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+.lead-form__submit:disabled {
+  cursor: progress;
+  opacity: 0.85;
+}
+
+.lead-form__submit.is-loading .lead-form__submit-label::after {
+  content: '';
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.6em;
+  vertical-align: -0.12em;
+  border: 2px solid color-mix(in oklab, var(--ink) 35%, transparent);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: leadFormSpin 700ms linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lead-form__submit.is-loading .lead-form__submit-label::after {
+    animation: none;
+  }
+}
+
+@keyframes leadFormSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success / failure states */
+.lead-form__result {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--paper);
+  border-radius: 8px;
+  box-shadow: 0 24px 56px -30px oklch(0% 0 0 / 0.6);
+}
+
+.lead-form__result--success {
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+}
+
+.lead-form__result--failure {
+  border: 1px solid color-mix(in oklab, oklch(55% 0.18 25) 45%, transparent);
+}
+
+.lead-form__result-title {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.lead-form__result-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.lead-form__wa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  margin-top: 0.25rem;
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+  color: var(--paper);
+  text-decoration: none;
+  background: oklch(52% 0.14 150);
+  border-radius: 5px;
+  transition: transform 200ms var(--ease-out-expo), box-shadow 200ms var(--ease-out-expo);
+}
+
+.lead-form__wa-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -16px oklch(52% 0.14 150 / 0.7);
+}
+
+.lead-form__wa-btn:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+@media (min-width: 560px) {
+  .lead-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lead-form__submit {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
