@@ -4,11 +4,11 @@ import { t } from '../../lib/i18n.js';
 /* Bento asimétrico: una celda protagonista + cuatro de apoyo. Las imágenes
    con texto horneado en un borde se recortan vía object-position. */
 const ITEMS = [
-  { src: '/media/interior-cocina-pasillo-crop-1600.webp', small: '/media/interior-cocina-pasillo-crop-800.webp', altKey: 'gallery.alt1', w: 1080, h: 1134, cell: 'main', pos: 'center' },
-  { src: '/media/exterior-edificio-noche-crop-640.webp', small: '/media/exterior-edificio-noche-crop-640.webp', altKey: 'gallery.alt2', w: 512, h: 486, cell: 'tall', pos: 'center 30%' },
-  { src: '/media/exterior-fachada-detalle-640.webp', small: '/media/exterior-fachada-detalle-640.webp', altKey: 'gallery.alt3', w: 512, h: 640, cell: 'wide', pos: 'center 40%' },
-  { src: '/media/interior-escritorio-640.webp', small: '/media/interior-escritorio-640.webp', altKey: 'gallery.alt4', w: 512, h: 640, cell: 'sq', pos: 'center' },
-  { src: '/media/ficha-1rec-interior-1600.webp', small: '/media/ficha-1rec-interior-800.webp', altKey: 'gallery.alt5', w: 1080, h: 1350, cell: 'sq2', pos: 'center 12%' },
+  { src: 'media/interior-cocina-pasillo-crop-1600.webp', small: 'media/interior-cocina-pasillo-crop-800.webp', altKey: 'gallery.alt1', w: 1080, h: 1134, cell: 'main', pos: 'center' },
+  { src: 'media/exterior-edificio-noche-crop-640.webp', small: 'media/exterior-edificio-noche-crop-640.webp', altKey: 'gallery.alt2', w: 512, h: 486, cell: 'tall', pos: 'center 30%' },
+  { src: 'media/exterior-fachada-detalle-640.webp', small: 'media/exterior-fachada-detalle-640.webp', altKey: 'gallery.alt3', w: 512, h: 640, cell: 'wide', pos: 'center 40%' },
+  { src: 'media/interior-escritorio-640.webp', small: 'media/interior-escritorio-640.webp', altKey: 'gallery.alt4', w: 512, h: 640, cell: 'sq', pos: 'center' },
+  { src: 'media/ficha-1rec-interior-1600.webp', small: 'media/ficha-1rec-interior-800.webp', altKey: 'gallery.alt5', w: 1080, h: 1350, cell: 'sq2', pos: 'center 12%' },
 ];
 
 /** @param {HTMLElement} el */

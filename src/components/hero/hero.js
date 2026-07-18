@@ -22,8 +22,8 @@ export function render(el) {
     <div class="hero">
       <img
         class="hero__bg"
-        src="/media/rooftop-terraza-crop-1600.webp"
-        srcset="/media/rooftop-terraza-crop-800.webp 800w, /media/rooftop-terraza-crop-1600.webp 1600w"
+        src="media/rooftop-terraza-crop-1600.webp"
+        srcset="media/rooftop-terraza-crop-800.webp 800w, media/rooftop-terraza-crop-1600.webp 1600w"
         sizes="100vw"
         width="1080"
         height="945"
