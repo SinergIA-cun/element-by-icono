@@ -1,0 +1,69 @@
+#faq {
+  background: var(--paper);
+}
+
+.faq {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: var(--space-section) clamp(1.25rem, 4vw, 3rem);
+}
+
+.faq__eyebrow {
+  color: var(--gold-deep);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.faq__heading {
+  font-family: 'Archivo Expanded', 'Inter', sans-serif;
+  font-stretch: expanded;
+  font-size: var(--text-display);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.faq__item {
+  border-bottom: 1px solid oklch(21% 0.045 260 / 0.15);
+}
+
+.faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__q::-webkit-details-marker {
+  display: none;
+}
+
+.faq__q:hover {
+  color: var(--gold-deep);
+}
+
+.faq__chevron {
+  flex: 0 0 auto;
+  width: 18px;
+  color: var(--gold-deep);
+  transition: transform 250ms var(--ease-out-expo);
+}
+
+.faq__item[open] .faq__chevron {
+  transform: rotate(180deg);
+}
+
+.faq__a {
+  padding: 0 0 1.4rem;
+  color: oklch(38% 0.02 260);
+  max-width: 44rem;
+}

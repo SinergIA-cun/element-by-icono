@@ -9,6 +9,11 @@ import { render as renderStats } from './components/stats/stats.js';
 import { render as renderLocation } from './components/location/location.js';
 import { render as renderTypologies } from './components/typologies/typologies.js';
 import { render as renderCalculator } from './components/calculator/calculator.js';
+import { render as renderGallery } from './components/gallery/gallery.js';
+import { render as renderTimeline } from './components/timeline/timeline.js';
+import { render as renderTrackRecord } from './components/track-record/track-record.js';
+import { render as renderFaq } from './components/faq/faq.js';
+import { render as renderContact } from './components/contact/contact.js';
 
 const REVEAL_THRESHOLD = 0.15;
 
@@ -19,6 +24,11 @@ const MOUNTS = [
   { id: 'location', render: renderLocation },
   { id: 'typologies', render: renderTypologies },
   { id: 'calculator', render: renderCalculator },
+  { id: 'gallery', render: renderGallery },
+  { id: 'timeline', render: renderTimeline },
+  { id: 'track-record', render: renderTrackRecord },
+  { id: 'faq', render: renderFaq },
+  { id: 'contact', render: renderContact },
 ];
 
 function initRevealObserver() {
