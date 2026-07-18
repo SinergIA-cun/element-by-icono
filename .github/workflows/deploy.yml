@@ -23,7 +23,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # npm install (no ci): el lockfile local se genera con npm 11 y el runner
+      # trae npm 10 — resuelven las deps opcionales wasm distinto y ci truena.
+      - run: npm install
       - run: npm test
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
