@@ -8,6 +8,7 @@ import { render as renderHero } from './components/hero/hero.js';
 import { render as renderStats } from './components/stats/stats.js';
 import { render as renderLocation } from './components/location/location.js';
 import { render as renderTypologies } from './components/typologies/typologies.js';
+import { render as renderCalculator } from './components/calculator/calculator.js';
 
 const REVEAL_THRESHOLD = 0.15;
 
@@ -17,6 +18,7 @@ const MOUNTS = [
   { id: 'stats', render: renderStats },
   { id: 'location', render: renderLocation },
   { id: 'typologies', render: renderTypologies },
+  { id: 'calculator', render: renderCalculator },
 ];
 
 function initRevealObserver() {
